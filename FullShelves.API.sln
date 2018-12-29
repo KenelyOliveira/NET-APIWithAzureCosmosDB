@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullShelves.API", "FullShelves.API\FullShelves.API.csproj", "{05863071-2EA7-43FE-BE17-313890A2C960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullShelves.API", "FullShelves.API\FullShelves.API.csproj", "{05863071-2EA7-43FE-BE17-313890A2C960}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullShelves.Repository", "Repository\FullShelves.Repository.csproj", "{F7228F7C-C5FB-46CE-B8A4-F0DFCEB20A7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullShelves.Domain", "FullShelves.Domain\FullShelves.Domain.csproj", "{0376AD72-96E7-4E60-B610-640FBD467D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullShelves.Services", "FullShelves.Services\FullShelves.Services.csproj", "{1D743E95-055D-4963-8C40-FC41C3D4AEB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - API", "01 - API", "{F08760E3-91A7-429A-B038-BDE1B644C008}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Services", "02 - Services", "{7812D90B-23AF-45F1-8EA3-E17B4BBB97C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - Domain", "03 - Domain", "{4BD9023B-93FF-479D-90B8-DA9AC60655E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Repository", "04 - Repository", "{1E310741-F074-4D63-A188-2FCACA5BB0F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,27 @@ Global
 		{05863071-2EA7-43FE-BE17-313890A2C960}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05863071-2EA7-43FE-BE17-313890A2C960}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05863071-2EA7-43FE-BE17-313890A2C960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7228F7C-C5FB-46CE-B8A4-F0DFCEB20A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7228F7C-C5FB-46CE-B8A4-F0DFCEB20A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7228F7C-C5FB-46CE-B8A4-F0DFCEB20A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7228F7C-C5FB-46CE-B8A4-F0DFCEB20A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0376AD72-96E7-4E60-B610-640FBD467D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0376AD72-96E7-4E60-B610-640FBD467D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0376AD72-96E7-4E60-B610-640FBD467D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0376AD72-96E7-4E60-B610-640FBD467D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D743E95-055D-4963-8C40-FC41C3D4AEB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D743E95-055D-4963-8C40-FC41C3D4AEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D743E95-055D-4963-8C40-FC41C3D4AEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D743E95-055D-4963-8C40-FC41C3D4AEB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{05863071-2EA7-43FE-BE17-313890A2C960} = {F08760E3-91A7-429A-B038-BDE1B644C008}
+		{F7228F7C-C5FB-46CE-B8A4-F0DFCEB20A7D} = {1E310741-F074-4D63-A188-2FCACA5BB0F4}
+		{0376AD72-96E7-4E60-B610-640FBD467D81} = {4BD9023B-93FF-479D-90B8-DA9AC60655E5}
+		{1D743E95-055D-4963-8C40-FC41C3D4AEB7} = {7812D90B-23AF-45F1-8EA3-E17B4BBB97C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AC975529-FA7C-470B-ACEE-AC52BE69DAA3}
