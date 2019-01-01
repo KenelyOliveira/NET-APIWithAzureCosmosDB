@@ -1,27 +1,40 @@
 using FullShelves.Repository.Contract;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using System.Security.Authentication;
+using Microsoft.Extensions.Configuration;
 
 namespace FullShelves.Repository
 {
   public class Connection : IConnection
   {
-    public string ConnectionString { get { return @"mongodb://kenely:FgmKYZj2qKIw1YPEBtiHQv5lW0BWJzF3LOkMHa6EWNeOHkBTccD7c8feIQKbknxHlm5cQ7oyCXP3r2uFB7E97w==@kenely.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"; } }
-    public IMongoDatabase Db { get; set; }
-    
-    public Connection()
+    #region Constructor
+
+    private readonly IConfiguration configuration;
+
+    public Connection(IConfiguration configuration)
     {
-      MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(ConnectionString));
-      settings.SslSettings =
-        new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
+      this.configuration = configuration;
+
+      Connect();
+    }
+
+    #endregion
+
+    public IMongoDatabase Db { get; set; }
+
+    public void Connect()
+    {
+      //var connectionString = @"mongodb://fullshelves:BgRmXlyPKHFHr6Jz9Hpj8JP72GPM0LmOqCM3K6IIJVCwqFtHwdLLCAge90EgkZVtmj51km6NgfueeEFZsgPmiA==@fullshelves.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
+
+      MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(configuration.GetConnectionString("AzureCosmosDB")));
+      settings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
 
       var mongoClient = new MongoClient(settings);
       Db = mongoClient.GetDatabase("FullShelves");
 
-      #region insert
+      #region Initial Seed
 
-      //var database = MongoClient.GetDatabase("FullShelves");
+      //var database = mongoClient.GetDatabase("FullShelves");
       //database.CreateCollection("Books");
       //database.CreateCollection("Genre");
       //database.CreateCollection("Author");

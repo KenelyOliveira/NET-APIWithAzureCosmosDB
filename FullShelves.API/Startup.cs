@@ -21,7 +21,6 @@ namespace FullShelves.API
 
     public void ConfigureServices(IServiceCollection services)
     {
-
       #region Services
 
       services.AddTransient<IGenreService, GenreService>();
@@ -30,6 +29,8 @@ namespace FullShelves.API
       #endregion
 
       #region Repository
+
+      services.AddSingleton(Configuration);
 
       services.AddTransient<IConnection, Connection>();
       services.AddTransient<IGenreRepository, GenreRepository>();

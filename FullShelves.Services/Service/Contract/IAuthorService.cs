@@ -8,5 +8,6 @@ namespace FullShelves.Service.Contract
   {
     Author FindGenre(Func<Author, bool> func);
     List<Author> GetAuthors();
+    void Save(Author author);
   }
 }
